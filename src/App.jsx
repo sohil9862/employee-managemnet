@@ -34,11 +34,11 @@ function App() {
         {/* Content */}
         <main className="p-6">
           {currentPage === "Dashboard" && (
-            <Dashboard />
+            <Dashboard darkMode={darkMode}/>
           )}
 
           {currentPage === "Employees" && (
-            <Employees  />
+            <Employees  darkMode={darkMode}/>
           )}
 
           {currentPage === "Departments" && (
