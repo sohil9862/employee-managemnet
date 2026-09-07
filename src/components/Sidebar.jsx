@@ -35,7 +35,7 @@ function Sidebar({
   return (
     <aside
       className={`min-h-screen border-r transition-all duration-300 flex flex-col
-        ${collapsed ? "w-20" : "w-50"}
+        ${collapsed ? "w-20" : "w-30 md:w-50"}
         bg-white dark:bg-gray-900
         border-gray-200 dark:border-gray-700`}
     >
@@ -54,7 +54,7 @@ function Sidebar({
 
           {/* Logo Name */}
           {!collapsed && (
-            <div className="text-xl font-bold text-black dark:text-white">
+            <div className="hidden md:block text-xl font-bold text-black dark:text-white">
               TalentDesk
             </div>
           )}
@@ -64,7 +64,7 @@ function Sidebar({
 
       {/* Workspace */}
       {!collapsed && (
-        <div className="text-[10px] font-medium uppercase tracking-wide ml-4 mt-6 text-black dark:text-gray-400">
+        <div className="hidden md:block text-[10px] font-medium uppercase tracking-wide ml-4 mt-6 text-black dark:text-gray-400">
           WORKSPACE
         </div>
       )}
@@ -80,7 +80,7 @@ function Sidebar({
               ${
                 collapsed
                   ? "justify-center px-3 py-3"
-                  : "gap-3 px-4 py-3"
+                  : "justify-center px-3 py-3 md:justify-start md:gap-3 md:px-4 md:py-3"
               }
               ${
                 currentPage === item.name
@@ -119,7 +119,7 @@ function Sidebar({
           )}
 
           {!collapsed && (
-            <span className="font-medium">
+            <span className="hidden md:inline font-medium">
               Collapse
             </span>
           )}

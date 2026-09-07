@@ -401,7 +401,7 @@ function Employees({ darkMode }) {
       open={!!editingEmployee}
       onCancel={handleCancelEdit}
       footer={null}
-      width={950}
+      width="95%"
       centered
       destroyOnHidden
     >
@@ -1018,7 +1018,7 @@ function Employees({ darkMode }) {
       open={!!viewingEmployee}
       onCancel={handleCloseView}
       footer={null}
-      width={750}
+      width="95%"
       centered
       destroyOnHidden
     >
@@ -1225,7 +1225,7 @@ function Employees({ darkMode }) {
 
           {/* FOOTER */}
 
-          <div className="flex justify-end gap-2">
+          <div className="flex flex-col gap-2 sm:flex-row sm:justify-end">
 
             <Button
               onClick={handleCloseView}
@@ -1407,14 +1407,14 @@ function Employees({ darkMode }) {
 
         {/* PAGE HEADER */}
 
-        <div className="flex flex-col gap-4 mb-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 mb-6 md:flex-row md:items-center md:justify-between">
 
           <div>
             <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
             Employee
           </h3>
 
-            <p className="mt-1 text-gray-500 dark:white">
+            <p className="mt-1 text-gray-500 dark:text-gray-400">
               Manage your employees and their information.
             </p>
           </div>
@@ -1423,7 +1423,7 @@ function Employees({ darkMode }) {
             type="primary"
             icon={<UserAddOutlined />}
             size="large"
-            className="w-full sm:w-auto"
+            className="w-full md:w-auto"
           >
             Add Employee
           </Button>
@@ -1459,7 +1459,7 @@ function Employees({ darkMode }) {
                 setSearchText(e.target.value)
               }
               allowClear
-              className="w-full sm:w-80"
+              className="w-full md:w-80"
             />
 
             {/* DEPARTMENT */}
@@ -1468,7 +1468,7 @@ function Employees({ darkMode }) {
               size="large"
               value={departmentFilter}
               onChange={setDepartmentFilter}
-              className="w-full sm:w-44"
+              className="w-full md:w-44"
               options={[
                 {
                   value: "all",
@@ -1511,7 +1511,7 @@ function Employees({ darkMode }) {
               size="large"
               value={statusFilter}
               onChange={setStatusFilter}
-              className="w-full sm:w-40"
+              className="w-full md:w-40"
               options={[
                 {
                   value: "all",
@@ -1558,7 +1558,7 @@ function Employees({ darkMode }) {
         {/* TABLE */}
 
         <div
-          className={`w-full rounded-lg border ${borderColor} overflow-hidden`}
+          className={`w-full rounded-lg border ${borderColor} overflow-x-auto`}
         >
 
           <Table

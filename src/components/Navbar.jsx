@@ -25,32 +25,32 @@ function Navbar({ currentPage, darkMode, setDarkMode }) {
 
   return (
     <header
-      className="h-16 border-b flex items-center justify-between px-6
+      className="h-16 border-b flex items-center justify-between px-3 md:px-6
                  bg-white dark:bg-gray-900
                  border-gray-200 dark:border-gray-700"
     >
       {/* Left side - Breadcrumb */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1 md:gap-2">
 
-        <span className="text-gray-500 dark:text-gray-400 font-small">
+        <span className="text-gray-500 dark:text-gray-400 text-sm">
           TalentDesk
         </span>
 
-        <span className="text-black dark:text-white">
+        <span className="text-black dark:text-white text-sm">
           &gt;
         </span>
 
-        <span className="text-black dark:text-white font-small">
+        <span className="text-black dark:text-white text-sm">
           {currentPage}
         </span>
 
       </div>
 
       {/* Right side */}
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-2 md:gap-5">
 
         {/* Search */}
-      <div className="w-80">
+      <div className="hidden md:block w-80">
         <Input
           placeholder="Search..." 
           prefix={
@@ -111,7 +111,7 @@ function Navbar({ currentPage, darkMode, setDarkMode }) {
         <div className="flex items-center gap-3">
           <Avatar icon={<UserOutlined />} />
 
-          <span className="text-gray-700 dark:text-gray-200 font-medium">
+          <span className="hidden md:inline text-gray-700 dark:text-gray-200 font-medium">
             Nadia
           </span>
         </div>
@@ -123,7 +123,7 @@ function Navbar({ currentPage, darkMode, setDarkMode }) {
         >
           <div className="flex items-center gap-3 cursor-pointer">
             <DownOutlined
-              className="text-gray-500 dark:text-gray-300 text-xs"
+              className="hidden md:blocktext-gray-500 dark:text-gray-300 text-xs"
             />
           </div>
         </Dropdown>

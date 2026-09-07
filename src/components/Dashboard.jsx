@@ -7,7 +7,7 @@ function Dashboard() {
   return (
     <div>
       {/* Top section */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         
         {/* Left side */}
         <div>
@@ -21,11 +21,11 @@ function Dashboard() {
         </div>
 
         {/* Right side - Buttons */}
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col gap-3 w-full md:w-auto md:flex-row">
           
           {/* Export Report */}
           <button
-            className="flex items-center gap-2 px-4 py-2 rounded-lg
+            className="flex items-center justify-center gap-2 w-full md:w-auto px-4 py-2 rounded-lg
                        border border-gray-200 dark:border-gray-700
                        bg-white dark:bg-gray-800
                        text-gray-700 dark:text-gray-200
@@ -38,7 +38,7 @@ function Dashboard() {
 
           {/* Add Employee */}
           <button
-            className="flex items-center gap-2 px-4 py-2 rounded-lg
+            className="flex items-center justify-center gap-2 w-full md:w-auto px-4 py-2 rounded-lg
                        bg-blue-600 text-white
                        hover:bg-blue-700
                        transition cursor-pointer"
