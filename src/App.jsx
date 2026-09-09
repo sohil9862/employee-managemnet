@@ -3,11 +3,15 @@ import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
 import Employees from "./components/Employees";
+import Login from "./components/Login";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [currentPage, setCurrentPage] = useState("Dashboard");
   const [collapsed, setCollapsed] = useState(false);
+
+  if (!isLoggedIn) { return ( <Login setIsLoggedIn={setIsLoggedIn} /> ); }
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -29,6 +33,7 @@ function App() {
           currentPage={currentPage}
           darkMode={darkMode}
           setDarkMode={setDarkMode}
+          setIsLoggedIn={setIsLoggedIn}
         />
 
         {/* Content */}
@@ -42,12 +47,12 @@ function App() {
           )}
 
           {currentPage === "Departments" && (
-              Departments
+              <div> Departments </div>
             
           )}
 
           {currentPage === "Settings" && (
-              Settings
+              <div> Settings </div>
           )}
         </main>
 

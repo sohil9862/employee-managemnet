@@ -9,7 +9,7 @@ import {
   SunOutlined,
 } from "@ant-design/icons";
 
-function Navbar({ currentPage, darkMode, setDarkMode }) {
+function Navbar({ currentPage, darkMode, setDarkMode, setIsLoggedIn, }) {
   const menuItems = [
     {
       key: "profile",
@@ -22,6 +22,12 @@ function Navbar({ currentPage, darkMode, setDarkMode }) {
       icon: <LogoutOutlined />,
     },
   ];
+
+  const handleMenuClick = ({ key }) => {
+    if (key === "logout") {
+      setIsLoggedIn(false);
+    }
+  };
 
   return (
     <header
@@ -118,7 +124,8 @@ function Navbar({ currentPage, darkMode, setDarkMode }) {
 
         {/* Dropdown */}
         <Dropdown
-          menu={{ items: menuItems }}
+          menu={{ items: menuItems,
+              onClick: handleMenuClick, }}
           placement="bottomRight"
         >
           <div className="flex items-center gap-3 cursor-pointer">

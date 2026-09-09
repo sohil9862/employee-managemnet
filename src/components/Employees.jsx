@@ -1565,7 +1565,7 @@ function Employees({ darkMode }) {
             columns={columns}
             dataSource={filteredEmployees}
             pagination={{
-              pageSize: 5,
+              pageSize: 3,
             }}
             scroll={{
               x: 900,

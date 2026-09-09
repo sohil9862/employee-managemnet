@@ -35,7 +35,7 @@ function Sidebar({
   return (
     <aside
       className={`min-h-screen border-r transition-all duration-300 flex flex-col
-        ${collapsed ? "w-20" : "w-30 md:w-50"}
+        ${collapsed ? "w-20" : "w-38 md:w-50"}
         bg-white dark:bg-gray-900
         border-gray-200 dark:border-gray-700`}
     >
