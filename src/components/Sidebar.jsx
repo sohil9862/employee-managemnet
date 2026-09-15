@@ -34,14 +34,13 @@ function Sidebar({
 
   return (
     <aside
-      className={`min-h-screen border-r transition-all duration-300 flex flex-col
+      className={`h-screen overflow-hidden border-r transition-all duration-300 flex flex-col
         ${collapsed ? "w-20" : "w-38 md:w-50"}
-        bg-white dark:bg-gray-900
-        border-gray-200 dark:border-gray-700`}
+        bg-gray-900 border-gray-700`}
     >
       {/* Logo */}
       <div
-        className={`h-16 flex items-center ${
+        className={`h-16 flex items-center flex-shrink-0 ${
           collapsed ? "justify-center" : "px-4"
         }`}
       >
@@ -54,7 +53,7 @@ function Sidebar({
 
           {/* Logo Name */}
           {!collapsed && (
-            <div className="hidden md:block text-xl font-bold text-black dark:text-white">
+            <div className="hidden md:block text-xl font-bold text-white">
               TalentDesk
             </div>
           )}
@@ -64,13 +63,13 @@ function Sidebar({
 
       {/* Workspace */}
       {!collapsed && (
-        <div className="hidden md:block text-[10px] font-medium uppercase tracking-wide ml-4 mt-6 text-black dark:text-gray-400">
+        <div className="hidden md:block text-[10px] font-medium uppercase tracking-wide ml-4 mt-6 text-gray-400 flex-shrink-0">
           WORKSPACE
         </div>
       )}
 
       {/* Menu */}
-      <nav className="p-4 space-y-2 mt-2">
+      <nav className="p-4 space-y-2 mt-2 flex-1 min-h-0 overflow-hidden">
         {menuItems.map((item) => (
           <div
             key={item.name}
@@ -84,8 +83,8 @@ function Sidebar({
               }
               ${
                 currentPage === item.name
-                  ? "bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400"
-                  : "text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                  ? "bg-blue-900/30 text-blue-400"
+                  : "text-gray-300 hover:bg-gray-800"
               }`}
           >
             {/* Icon */}
@@ -104,12 +103,11 @@ function Sidebar({
       </nav>
 
       {/* Collapse Button - Bottom */}
-      <div className="mt-auto p-4 border-t border-gray-200 dark:border-gray-700">
+      <div className="mt-auto p-4 border-t border-gray-700 flex-shrink-0">
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="w-full h-1 flex items-center justify-center rounded-lg cursor-pointer 
-                     text-gray-600 hover:bg-gray-100
-                     dark:text-gray-300 dark:hover:bg-gray-800"
+          className="w-full h-10 flex items-center justify-center gap-2 rounded-lg cursor-pointer
+                     text-gray-300 hover:bg-gray-800"
           title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
           {collapsed ? (
